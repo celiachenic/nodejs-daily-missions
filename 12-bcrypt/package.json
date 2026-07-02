@@ -1,0 +1,16 @@
+{
+  "name": "12-bcrypt",
+  "version": "1.0.0",
+  "description": "健身房系統要新增「會員註冊」功能，為了避免明文密碼直接存入資料庫，在儲存前必須先對密碼進行雜湊處理。登入時再使用 bcrypt.compare 比對，確認密碼是否正確。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcrypt": "^6.0.0"
+  }
+}

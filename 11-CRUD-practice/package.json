@@ -1,0 +1,17 @@
+{
+  "name": "11-crud-practice",
+  "version": "1.0.0",
+  "description": "練習資料來源：[六角 node.js 每日任務 Day 11](https://hackmd.io/gMFdvWuCRR21CWDcQI5rSw?view)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}

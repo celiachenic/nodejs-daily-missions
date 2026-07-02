@@ -1,0 +1,17 @@
+{
+  "name": "10-express-router",
+  "version": "1.0.0",
+  "description": "情境：\r 健身房系統的 API 規模逐漸擴大，需要將路由從 app.js 拆分出來獨立管理。請使用 express.Router() 建立會員路由模組，並在 app.js 中正確掛載。",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
