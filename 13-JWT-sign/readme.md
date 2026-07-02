@@ -36,3 +36,19 @@
 - 使用 `.env` 管理 Secret
 - 理解 Payload 不應存放敏感資料
 - 設定 Token 過期時間 (`expiresIn`)
+
+---
+## 測試網站
+
+[JWT Debugger](https://www.jwt.io/)
+
+可將簽發好的 JWT Token 貼到網站中進行解析，查看：
+
+* Header
+* Payload
+* Signature 驗證結果（可輸入 Secret 驗證簽章是否正確）
+
+> **注意：**
+>
+> * JWT 的 Header 與 Payload 皆可被 Base64 解碼，不應存放密碼、API Key、信用卡等敏感資料。
+> * 請勿將正式環境的 Token、`JWT_SECRET` 或任何包含個資的 Token 貼到第三方網站進行測試，建議使用練習用或測試用資料。
