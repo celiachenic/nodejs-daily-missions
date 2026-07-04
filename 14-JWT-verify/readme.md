@@ -41,9 +41,7 @@
     { "status": "success", "token": "<JWT_TOKEN>" }
     ```
 
-  - 建立受保護路由 `GET /profile` ：掛上 `authMiddleware`。
-  
-  - 驗證通過後回傳狀態碼 `200` 與 `req.user` 的內容。
+  - 建立受保護路由 `GET /profile` ：掛上 `authMiddleware`。驗證通過後回傳狀態碼 `200` 與 `req.user` 的內容。
     回傳格式：
     ```json
     { "status": "success", "data": "<req.user>" }
