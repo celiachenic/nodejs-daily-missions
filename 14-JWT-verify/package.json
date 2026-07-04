@@ -1,0 +1,19 @@
+{
+  "name": "14-jwt-verify",
+  "version": "1.0.0",
+  "description": "練習資料來源：[六角 node.js 每日任務 Day 14 JWT 驗證與自訂 Middleware](https://hackmd.io/QEFjZzKARr6OW6aS_F9AcA?view)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3"
+  }
+}
