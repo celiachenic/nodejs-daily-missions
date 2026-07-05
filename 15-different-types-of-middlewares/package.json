@@ -1,0 +1,16 @@
+{
+  "name": "15-different-types-of-middlewares",
+  "version": "1.0.0",
+  "description": "練習資料來源：[六角 node.js 每日任務 Day 15 Middleware 三種類型](https://hackmd.io/vJ5gim84Sv2LXdInP1Xe-w?view)",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
