@@ -27,6 +27,11 @@
 - Day 12 - 密碼安全與 bcrypt
     
 - Day 13 - JWT 概念與簽發
-    
 
+- Day 14 - JWT 驗證與自訂 Middleware
+
+- Day 15 - Middleware 三種類型
+
+- Day 16 - Auth 流程整合
 ---
+
