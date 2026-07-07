@@ -22,21 +22,17 @@ let nextId = 2;
 //註冊
 router.post("/register", async (req, res) => {
   const { email, password } = req.body;
+  const emailValue = email?.toString().trim().toLowerCase();
+  const passwordValue = password?.toString().trim();
   //未填寫 email 或 password
-  if (
-    email == null ||
-    email.toString().trim() === "" ||
-    !email.toString().includes("@") ||
-    password == null ||
-    password.toString().trim() === ""
-  ) {
+  if (!emailValue || !emailValue.includes("@") || !passwordValue) {
     return res.status(400).json({
       status: "error",
       message: "請填寫 email 與 password",
     });
   }
   //email 已被使用
-  const isRegistered = users.find((user) => user.email === email);
+  const isRegistered = users.find((user) => user.email === emailValue);
   if (isRegistered) {
     return res.status(409).json({
       status: "error",
@@ -46,8 +42,8 @@ router.post("/register", async (req, res) => {
   //註冊成功
   const newUser = {
     id: nextId++,
-    email,
-    password: await hashPassword(password),
+    email: emailValue,
+    password: await hashPassword(passwordValue),
   };
   users.push(newUser);
   res.status(201).json({
