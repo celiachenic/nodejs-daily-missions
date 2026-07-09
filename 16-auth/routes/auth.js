@@ -10,6 +10,10 @@ const hashPassword = async (password) => {
   return bcrypt.hash(password, salt);
 };
 
+const verifyPassword = async (password, hash) => {
+  return bcrypt.compare(password, hash);
+};
+
 const users = [
   {
     id: 1,
@@ -57,6 +61,36 @@ router.post("/register", async (req, res) => {
 });
 
 //登入
-router.post("/login", (req, res) => {});
+router.post("/login", async (req, res) => {
+  const { email, password } = req.body;
+  const emailValue = email?.toString().trim().toLowerCase();
+  const passwordValue = password?.toString().trim();
+  if (!emailValue || !emailValue.includes("@") || !passwordValue) {
+    return res.status(400).json({
+      status: "error",
+      message: "請填寫 email 與 password",
+    });
+  }
+  const user = users.find((user) => user.email === emailValue);
+  if (!user) {
+    return res.status(400).json({
+      status: "error",
+      message: "email 或密碼錯誤",
+    });
+  }
+  const isMatch = await verifyPassword(passwordValue, user.password);
+  if (isMatch) {
+    return res.status(200).json({
+      status: "success",
+      token: jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, {
+        expiresIn: "7d",
+      }),
+    });
+  }
+  return res.status(400).json({
+    status: "error",
+    message: "email 或密碼錯誤",
+  });
+});
 
 module.exports = router;
