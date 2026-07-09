@@ -70,6 +70,8 @@ project/
 1. 找到使用者
 2. 使用 `bcrypt.compare` 驗證密碼
 3. `jwt.sign` 並回傳 `<Token>`
+   - payload 格式：`{id:<user.id>, email:<user.email>}`
+   - 設定七天後過期： `{ expiresIn: '7d' }`
 
 | 情境 | HTTP Status | 回傳內容 |
 |------|-------------|----------|
