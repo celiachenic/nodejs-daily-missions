@@ -14,6 +14,16 @@ const verifyPassword = async (password, hash) => {
   return bcrypt.compare(password, hash);
 };
 
+const normalizeAuthInput = (body) => {
+  const { email, password } = body;
+  const emailValue = email?.toString().trim().toLowerCase();
+  const passwordValue = password?.toString().trim();
+  return {
+    emailValue,
+    passwordValue,
+  };
+};
+
 const users = [
   {
     id: 1,
@@ -25,9 +35,7 @@ let nextId = 2;
 
 //註冊
 router.post("/register", async (req, res) => {
-  const { email, password } = req.body;
-  const emailValue = email?.toString().trim().toLowerCase();
-  const passwordValue = password?.toString().trim();
+  const { emailValue, passwordValue } = normalizeAuthInput(req.body);
   //未填寫 email 或 password
   if (!emailValue || !emailValue.includes("@") || !passwordValue) {
     return res.status(400).json({
@@ -62,9 +70,7 @@ router.post("/register", async (req, res) => {
 
 //登入
 router.post("/login", async (req, res) => {
-  const { email, password } = req.body;
-  const emailValue = email?.toString().trim().toLowerCase();
-  const passwordValue = password?.toString().trim();
+  const { emailValue, passwordValue } = normalizeAuthInput(req.body);
   if (!emailValue || !emailValue.includes("@") || !passwordValue) {
     return res.status(400).json({
       status: "error",
