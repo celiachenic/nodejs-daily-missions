@@ -75,7 +75,7 @@ project/
 
 | 情境 | HTTP Status | 回傳內容 |
 |------|-------------|----------|
-| 登入成功 | `200 OK` | `{"status":"success","token":"<Token>"}` |
+| 登入成功 | `200 OK` | `{"status":"success","message":"登入成功","token":"<Token>"}` |
 | 未填寫 `email` 或 `password` | `400 Bad Request` | `{"status":"error","message":"請填寫 email 與 password"}` |
 | `email` 或 `password` 錯誤 | `400 Bad Request` | `{"status":"error","message":"email 或密碼錯誤"}` |
 
