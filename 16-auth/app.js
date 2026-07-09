@@ -14,15 +14,15 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/auth", auth);
-app.use("/note", authMiddleware, notes);
+app.use("/notes", authMiddleware, notes);
 
 app.use((req, res) => {
-  res.status(404).json({ status: "error", message: "404：此頁面不存在" });
+  return res.status(404).json({ status: "error", message: "404：此頁面不存在" });
 });
 
 app.use((err, req, res, next) => {
   console.error(err);
-  res.status(500).json({ status: "error", message: "500：內部伺服器錯誤" });
+  return res.status(500).json({ status: "error", message: "500：內部伺服器錯誤" });
 });
 const PORT = 3000;
 app.listen(PORT, () => {
