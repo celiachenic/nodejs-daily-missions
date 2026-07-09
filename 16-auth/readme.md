@@ -76,7 +76,8 @@ project/
 | 情境 | HTTP Status | 回傳內容 |
 |------|-------------|----------|
 | 登入成功 | `200 OK` | `{"status":"success","token":"<Token>"}` |
-| `email` 或 `password` 錯誤 | `400 Bad Request` | `{"status":"error","message":"email 或密碼錯誤"}` |
+| `email` 錯誤 | `400 Bad Request` | `{"status":"error","message":"email 錯誤"}` |
+| `password` 錯誤 | `400 Bad Request` | `{"status":"error","message":"密碼錯誤"}` |
 
 #### 存取筆記 (受保護路由) `/notes`
 
