@@ -86,11 +86,12 @@ router.post("/login", async (req, res) => {
   }
   const isMatch = await verifyPassword(passwordValue, user.password);
   if (isMatch) {
+    const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, {
+      expiresIn: "7d",
+    });
     return res.status(200).json({
       status: "success",
-      token: jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, {
-        expiresIn: "7d",
-      }),
+      token,
     });
   }
   return res.status(400).json({
